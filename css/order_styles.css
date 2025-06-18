@@ -1,0 +1,62 @@
+main {
+    max-width: 90%;
+}
+
+
+.order-list {
+    background-color: rgba(33, 29, 15, 0.8);
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.order {
+    display: grid;
+    grid-template-columns: 80px 1fr 100px 100px 120px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.order:last-child {
+    border-bottom: none;
+}
+
+.order .food-image {
+    max-width: 80px;
+    border-radius: 8px;
+}
+
+.order h3,
+.order p,
+.order strong {
+    font-size:1rem;
+    margin: 0;
+}
+
+.count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.remove-icon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /*
+    .order h3,
+    .order p,
+    .order strong {
+        font-size: 20px;
+    }
+        */
+
+    .remove-icon {
+        width: 32px;
+        height: 32px;
+    }
+}

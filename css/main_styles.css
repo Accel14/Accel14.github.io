@@ -1,0 +1,220 @@
+h1,
+h2 {
+  font-family: 'Pacifico', cursive;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  color: #dbcc69;
+
+  background-color: #1a160e;
+  background-image: url('img/back.png');
+  background-size: 50vh;
+}
+
+header {
+  background-color: rgba(17, 14, 1, 0.8);
+  padding: 1em;
+  padding-bottom: 0em;
+  text-align: center;
+  border-style: none none solid none;
+}
+
+img {
+  width: 100%;
+}
+
+/* Основные стили для навигации */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 20px;
+  position: relative;
+  /* Добавляем, чтобы кнопка оставалась поверх меню */
+  z-index: 10;
+  /* Кнопка будет над меню */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.menu-header {
+  display: none;
+  /* по умолчанию скрыто */
+}
+
+.menu-toggle {
+  display: none;
+  position: fixed;
+  right: 2vh;
+}
+
+footer {
+  background-color: #e48e05;
+  text-align: center;
+  padding: 1em;
+}
+
+footer p {
+  color: rgb(50, 45, 26);
+  font-size:1rem;
+}
+
+main {
+  min-height: calc(100vh - 100px);
+  /* 100px — примерная высота футера */
+  margin: 0 auto;
+  padding: 0px 0px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.button {
+  display: inline-block;
+  font-size: 1.2rem;
+  background-color: #cb8654;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  min-width: 90%;
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.from-cart-btn {
+  background-color: #d59568;
+}
+
+.button:hover {
+  background-color: #a8622f;
+}
+
+.submenu {
+  justify-content: center; align-items: center; display: none; background: linear-gradient(rgba(17, 14, 1, 0.8), rgb(28, 23, 2)); 
+      border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; gap: 10px; padding: 10px 10px 10px 10px;
+      margin-top: -2px; border-style: none solid solid solid;
+}
+
+.main-menu {
+  display: flex; justify-content:space-between;
+}
+
+/* Стили для мобильной версии */
+@media (max-width: 768px) {
+
+  .main-menu {
+    justify-content: left;
+  }
+
+  .dropbtn {
+    padding: 10px 14px;
+    font-size: 32px;
+  }
+
+  .dropdown-content {
+    min-width: 140px;
+    right: auto;
+    left: 0;
+  }
+
+  .dropdown-content a {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .header-last {
+    display: none;
+  }
+
+  /* Кнопка меню */
+  .menu-toggle {
+    display: block;
+    
+    color: white;
+    border: none;
+    padding: 0px;
+    font-size: 16px;
+    position: fixed;
+    z-index: 20;
+    border-radius: 10px;
+    /* Кнопка меню должна быть поверх остальных элементов */
+  }
+
+  /* Скрытое меню, выезжающее справа */
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    /* Меню скрыто справа */
+    width: 250px;
+    height: 100vh;
+    background-color: #423d1f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    /* Для отступа сверху */
+    transition: right 0.3s ease;
+    /* Плавная анимация */
+    z-index: 15;
+
+    /* Меню должно быть выше других элементов */
+  }
+
+  /* Меню при активном состоянии (выезжает справа) */
+  .menu.open {
+    right: 0;
+    /* Показываем меню */
+  }
+
+  /* Заголовок меню (логотип и описание) */
+  .menu-header {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .menu-logo {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+
+  }
+
+  .menu-description {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  /* Ссылки в меню */
+  .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 18px;
+    width: 88%;
+    text-align: center;
+    border-bottom: 1px solid #444;
+  }
+
+  .menu a:hover {
+    background-color: #555;
+  }
+}
+
+a.active {
+  text-decoration: underline;
+  font-weight: bold;
+  color: rgb(240, 213, 92);
+}
+

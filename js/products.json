@@ -1,0 +1,87 @@
+[
+  {
+    "1": [
+      {
+        "id": 6,
+        "name": "Гамбургер",
+        "mass": "120.0",
+        "price": "110.00",
+        "image_path": "img/burger.png"
+      },
+      {
+        "id": 8,
+        "name": "Закрытая пицца с курицей",
+        "mass": "150.0",
+        "price": "95.00",
+        "image_path": "img/pizza_closed_chicken.png"
+      },
+      {
+        "id": 4,
+        "name": "Круассан",
+        "mass": "60.0",
+        "price": "35.00",
+        "image_path": "img/croissant.png"
+      },
+      {
+        "id": 7,
+        "name": "Курник",
+        "mass": "105.0",
+        "price": "95.00",
+        "image_path": "img/kurnik.png"
+      },
+      {
+        "id": 1,
+        "name": "Пирог мясо-капустный",
+        "mass": "500.0",
+        "price": "240.00",
+        "image_path": "img/kapusta.png"
+      },
+      {
+        "id": 2,
+        "name": "Пирог со свежими ягодами",
+        "mass": "500.0",
+        "price": "228.00",
+        "image_path": "img/berry_pie.png"
+      },
+      {
+        "id": 5,
+        "name": "Пицца с колбасой",
+        "mass": "110.0",
+        "price": "85.00",
+        "image_path": "img/pizza_sausage.png"
+      },
+      {
+        "id": 10,
+        "name": "Сдоба с ветчиной",
+        "mass": "80.0",
+        "price": "65.00",
+        "image_path": "img/sdoba_ham.png"
+      },
+      {
+        "id": 3,
+        "name": "Сосиска в тесте",
+        "mass": "90.0",
+        "price": "62.00",
+        "image_path": "img/sosiska.png"
+      },
+      {
+        "id": 9,
+        "name": "Шашлык в тесте",
+        "mass": "180.0",
+        "price": "105.00",
+        "image_path": "img/shashlik_blanket.png"
+      }
+    ],
+    "2": [
+      {
+        "id": 11,
+        "name": "Чизкейк карамельный",
+        "mass": "125.0",
+        "price": "160.00",
+        "image_path": "img/cheesecake_caramel.jpg"
+      }
+    ],
+    "3": [
+    ]
+  }
+]

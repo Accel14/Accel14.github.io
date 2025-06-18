@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Пекарня "Хлебная лавка"</title>
+  <link rel="stylesheet" href="css/main_styles.css" />
+  <link rel="stylesheet" href="css/index_styles.css" />
+</head>
+
+<body style="background-image: url('img/back.png');">
+
+  <!-- views/navbar.ejs -->
+  <div style="position: sticky; top: -135px; z-index: 50;">
+    <header style="background-size: 50px 60px">
+      <div class="main-menu">
+        <a href="/"><img src="/Accel14.github.io/img/logo.png" style="width: 13vh; height: 12vh;"></a>
+        <h1 class="bakery-name" style="text-align: center; font-size: 5vh; font-family:'Gill Sans', 
+          'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+          ХЛЕБНАЯ ЛАВКА
+        </h1>
+        <div class="header-last">
+          <h3>Режим работы: каждый день с 09:00 до 21:00</h3>
+          <h3>г. Уфа, ул. Проспект Октября, 180</h3>
+        </div>
+        <input class="menu-toggle" id="menuToggle" type="image" src="/img/menu.png" width="60vh" height="60vh" />
+      </div>
+
+      <hr>
+
+      <nav>
+        <div class="menu" id="menu">
+          <div class="menu-header">
+            <img id="menu-logo" src="/img/logo.png" alt="Логотип" class="menu-logo">
+            <p class="menu-description">Добро пожаловать в нашу пекарню!</p>
+          </div>
+          <!---->
+          <a href="index.html" class="active">ГЛАВНАЯ</a>
+          <a href="products.html">АССОРТИМЕНТ</a>
+          <a href="order.html">ЗАКАЗ</a>
+          <a href="about.html">О НАС</a>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <main>
+
+    <section class="feature">
+      <img src="img/bread sticks.jpg" alt="Выпечка" class="feature-image">
+      <div class="feature-text">
+        <h3>Всегда свежая выпечка</h3>
+        <p>В пекарне "Хлебная Лавка" мы каждое утро готовим свежие булочки, круассаны и хлеб, используя только
+          натуральные ингредиенты.</p>
+        <a href="products.html" class="button">Смотреть ассортимент</a>
+      </div>
+    </section>
+
+    <section class="feature reverse">
+      <img src="img/baby.jpg" alt="Уютная атмосфера" class="feature-image">
+      <div class="feature-text">
+        <h3>Уютная атмосфера</h3>
+        <p>Мы не только пекарня, но и место для отдыха — приходите на чашечку кофе и ароматную булочку!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer style="display: flex; flex-direction: flow; 
+        justify-content:  space-around; font-size: 20px; align-items: center;">
+
+    <div>
+        <a style="text-decoration: none;" href="https://wa.me/79174251668">
+            <img style="width: 5vh; height: 5vh; cursor: pointer;" src="img/whatsapp-icon.png">
+        </a>
+        <a style="text-decoration: none;" href="https://vk.com/hlebnaya_lavka">
+            <img style="width: 5vh; height: 5vh; cursor: pointer;" src="img/vk-icon.png">
+        </a>
+        <a style="text-decoration: none;" href="https://t.me/79174251668">
+            <img style="width: 5vh; height: 5vh; cursor: pointer;" src="img/telegram-icon.png">
+        </a>
+    </div>
+    <p>&copy; 2025 ООО ХЛЕБНАЯ ЛАВКА</p>
+    <a style="text-decoration: none;" href="tel:89174251668">
+        <p>+7 (917) 425-16-68</p>
+    </a>
+        
+</footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

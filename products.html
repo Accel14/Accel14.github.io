@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Пекарня "Хлебная лавка"</title>
+  <link rel="stylesheet" href="css/main_styles.css" />
+  <link rel="stylesheet" href="css/catalogue_styles.css" />
+</head>
+
+<body style="background-image: url('img/back.png');">
+  <div style="position: sticky; top: -135px; z-index: 50;">
+    <header style=" background-size: 50px 60px">
+      <div class="main-menu">
+        <a href="index.html"><img src="img/logo.png" style="width: 13vh; height: 12vh;"></a>
+        <h1
+          style="text-align: center; font-size: 5vh; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+          ХЛЕБНАЯ ЛАВКА</h1>
+        <div class="header-last">
+          <h3>Режим работы: каждый день с 09:00 до 21:00
+            <h3>г. Уфа, ул. Проспект Октября, 180</h3>
+        </div>
+        <input class="menu-toggle" id="menuToggle" type="image" src="img/menu.png" width="60vh" height="60vh"
+          style="background-color: rgba(0, 0, 0, 0); border-radius: 15px;" />
+      </div>
+      <hr>
+      <nav>
+        <div class="menu" id="menu">
+          <div class="menu-header">
+            <img src="img/logo.png" alt="Логотип" class="menu-logo" href="index.html"> <!-- Логотип -->
+            <p class="menu-description">Добро пожаловать в нашу пекарню!</p> <!-- Дополнительная информация -->
+          </div>
+          <a href="index.html">ГЛАВНАЯ</a>
+          <a href="products.html" class="active">АССОРТИМЕНТ</a>
+          <a href="order.html">ЗАКАЗ</a>
+          <a href="about.html">О НАС</a>
+        </div>
+      </nav>
+    </header>
+    <div style="text-align: center; width: 100%;">
+      <section class="submenu" id="product-tools">
+        <div class="dropdown">
+          <button onclick="toggleDropdown()" class="dropbtn">↑↓</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#" value="name-asc">Название (А–Я)</a>
+            <a href="#" value="name-desc">Название (Я–А)</a>
+            <a href="#" value="price-asc">Цена ↑</a>
+            <a href="#" value="price-desc">Цена ↓</a>
+            <a href="#" value="mass-asc">Масса ↑</a>
+            <a href="#" value="mass-desc">Масса ↓</a>
+          </div>
+        </div>
+        <div style="justify-content: space-between; max-width: 700px; display: flex; gap: 10px" id="category-buttons">
+          <img class="category-button" src="img/bakery_button.png" onclick="loadProducts(1)"></img>
+          <img class="category-button" src="img/cupcake_button.png" onclick="loadProducts(2)"></img>
+          <img class="category-button" src="img/drinks_button.png" onclick="loadProducts(3)"></img>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <main>
+    <section id="category-cards">
+      <div class="category-banner" data-id="1" style="background-image: url('img/bakery.jpg');">
+        <div class="overlay"></div>
+        <div class="banner-text">Булочные изделия</div>
+      </div>
+      <div class="category-banner" data-id="2" style="background-image: url('img/sweets.png');">
+        <div class="overlay"></div>
+        <div class="banner-text">Сладкое</div>
+      </div>
+      <div class="category-banner" data-id="3" style="background-image: url('img/drinks.png');">
+        <div class="overlay"></div>
+        <div class="banner-text">Напитки</div>
+      </div>
+    </section>
+
+
+
+    <div id="product-list" class="product-list"></div>
+
+  </main>
+
+  <footer style="display: flex; flex-direction: flow; 
+        justify-content:  space-around; font-size: 20px; align-items: center;">
+
+    <div>
+      <a style="text-decoration: none;" href="https://wa.me/79174251668">
+        <img style="width: 5vh; height: 5vh; cursor: pointer;" src="img/whatsapp-icon.png">
+      </a>
+      <a style="text-decoration: none;" href="https://vk.com/hlebnaya_lavka">
+        <img style="width: 5vh; height: 5vh; cursor: pointer;" src="img/vk-icon.png">
+      </a>
+      <a style="text-decoration: none;" href="https://t.me/79174251668">
+        <img style="width: 5vh; height: 5vh; cursor: pointer;" src="img/telegram-icon.png">
+      </a>
+    </div>
+    <p>&copy; 2025 ООО ХЛЕБНАЯ ЛАВКА</p>
+    <a style="text-decoration: none;" href="tel:89174251668">
+      <p>+7 (917) 425-16-68</p>
+    </a>
+
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script src="js/createProductCart.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

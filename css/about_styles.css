@@ -1,0 +1,68 @@
+.locations {
+    gap: 4vh;
+    margin: 3vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.location-card {
+    transition: transform 0.2s;
+    width:500px;
+    height:430px;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: rgba(107, 88, 25, 0.15);
+    background-color: rgba(40, 33, 10, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.location-card:hover {
+    transform: translateY(-4px);
+}
+
+.location-card img {
+    cursor: pointer;
+}
+
+.close-map {
+    cursor: pointer;
+}
+
+.detail-section {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.location-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.location-info strong, .location-info a {
+    font-size: 24px;
+}
+
+.location-card p{
+    
+    font-size: 16px;
+}
+
+.my-head p {
+    font-size: 26px;
+}
+
+@media (max-width: 768px) {
+    .location-card {
+        width: 300px;
+        height: 300px;
+        
+    }
+
+    .locations {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
