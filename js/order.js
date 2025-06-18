@@ -56,8 +56,8 @@ function loadCart() {
 
     })
 
-      
-   
+
+
 
 
 
@@ -101,7 +101,27 @@ function renderCartItem(product, count, categoryId) {
   el.classList.add('order');
   el.id = "order_" + product.id;
 
-  el.innerHTML = `
+  let mql = window.matchMedia("(max-width: 768px)");
+  if (mql.matches) {
+    el.innerHTML = `
+  <img src="food/${product.image_path}" class="food-image" alt="${product.name}">
+  <div class="product-details">
+  
+    <h3>${product.name}</h3>
+
+    <div class="info-row">
+        <p>${product.mass} гр.</p>
+      <div class="count">
+        <p id="count_${product.id}">${count} шт.</p>
+        <img class="remove-icon" alt="Удалить" src="img/remove.png">
+      </div>
+      <strong>${product.price * count} руб.</strong>
+    </div>
+
+  </div>
+  `;
+  } else {
+    el.innerHTML = `
   <img src="food/${product.image_path}" class="food-image" alt="${product.name}">
   <h3>${product.name}</h3>
   <p>${product.mass} гр.</p>
@@ -111,6 +131,8 @@ function renderCartItem(product, count, categoryId) {
   </div>
   <strong>${product.price * count} руб.</strong> 
   `;
+  }
+
 
   el.querySelector('.remove-icon').addEventListener('click', () => removeFromCartOrder(product.id, categoryId));
   container.appendChild(el);
@@ -132,7 +154,27 @@ function renderCartTotal(totalCost, totalMass, totalCount) {
   total.id = 'total-order';
   total.style.backgroundColor = 'rgb(41, 32, 18)';
   total.style.borderRadius = '10px';
-  total.innerHTML = `
+  let mql = window.matchMedia("(max-width: 768px)");
+  if (mql.matches) {
+    total.innerHTML = `
+    <div style="width: 60px;"></div>
+    <div class="product-details">
+  
+    <h3>Итого</h3>
+
+    <div class="info-row">
+        <p>${totalMass} гр.</p>
+      <div class="count">
+        <p>${totalCount} шт.</p>
+        <img class="remove-icon" alt="Удалить" src="img/remove.png">
+      </div>
+      <strong>${totalCost} руб.</strong>
+    </div>
+
+  </div>
+  `;
+  } else {
+    total.innerHTML = `
     <div></div>
     <h3 style="font-size: 24px;">Итого</h3>
     <p  style="font-size: 20px;" id="total-mass">${totalMass} гр.</p>
@@ -141,5 +183,7 @@ function renderCartTotal(totalCost, totalMass, totalCount) {
     </div>
     <strong style="font-size: 24px;" id="total-price">${totalCost} руб.</strong>
   `;
+  }
+  
   container.appendChild(total);
 }

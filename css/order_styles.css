@@ -30,7 +30,7 @@ main {
 .order h3,
 .order p,
 .order strong {
-    font-size:1rem;
+    font-size: 1rem;
     margin: 0;
 }
 
@@ -47,16 +47,49 @@ main {
 }
 
 @media (max-width: 768px) {
-    /*
-    .order h3,
-    .order p,
-    .order strong {
-        font-size: 20px;
-    }
-        */
 
     .remove-icon {
-        width: 32px;
-        height: 32px;
+        width: 26px;
+        height: 26px;
     }
+
+    .order-list {
+        border-radius: 0px;
+    }
+
+    main {
+        max-width: 100%;
+    }
+
+    .order {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        height: 60px;
+        max-width: 100%;
+    }
+    .order .food-image {
+        max-width: 60px;
+    }
+    .order h3, .order p {
+        font-size: 15px;
+    }
+
+    .product-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+    }
+
+    .info-row {
+        display:flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
 }

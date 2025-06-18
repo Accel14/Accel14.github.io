@@ -12,10 +12,10 @@ document.getElementById('menuToggle').addEventListener('click', function () {
     }
 });
 
-const clearCart = document.createElement('button');
-clearCart.innerHTML = "Clear Cart";
-clearCart.addEventListener('click', () => {
-    localStorage.clear();
-});
+// const clearCart = document.createElement('button');
+// clearCart.innerHTML = "Clear Cart";
+// clearCart.addEventListener('click', () => {
+//     localStorage.clear();
+// });
 
-document.getElementById('menu').appendChild(clearCart);
+// document.getElementById('menu').appendChild(clearCart);
