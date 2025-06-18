@@ -4,11 +4,11 @@ document.getElementById('menuToggle').addEventListener('click', function () {
     
     let menu_img = document.getElementById('menuToggle');
     let path = new URL(menu_img.src).pathname;
-    
-    if (path == "/img/menu.png") {
-        menu_img.src = "/img/menu_close.png";
+
+    if (path == "img/menu.png") {
+        menu_img.src = "img/menu_close.png";
     } else {
-        menu_img.src = "/img/menu.png";
+        menu_img.src = "img/menu.png";
     }
 });
 

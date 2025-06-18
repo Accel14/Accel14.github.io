@@ -52,7 +52,8 @@ nav a {
 .menu-toggle {
   display: none;
   position: fixed;
-  right: 2vh;
+  top: 0vh;
+  right: 0vh;
 }
 
 footer {
@@ -98,10 +99,18 @@ main {
 }
 
 .submenu {
-  justify-content: center; align-items: center; display: none; background: linear-gradient(rgba(17, 14, 1, 0.8), rgb(28, 23, 2)); 
-      border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; gap: 10px; padding: 10px 10px 10px 10px;
-      margin-top: -2px; border-style: none solid solid solid;
+  justify-content: center; 
+  align-items: center; 
+  display: none; 
+  background: linear-gradient(rgba(17, 14, 1, 0.8), rgb(28, 23, 2));
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  gap: 10px;
+  padding: 10px 10px 10px 10px;
+  margin-top: -2px;
+  border-style: none solid solid solid;
 }
+
 
 .main-menu {
   display: flex; justify-content:space-between;
@@ -110,6 +119,18 @@ main {
 /* Стили для мобильной версии */
 @media (max-width: 768px) {
 
+  footer {
+    flex-direction: column;
+  }
+
+  .social {
+    justify-content: space-around;
+  }
+
+  .bakery-name {
+    font-size: 4vh;
+    display: none;
+  }
   .main-menu {
     justify-content: left;
   }
@@ -137,14 +158,15 @@ main {
   /* Кнопка меню */
   .menu-toggle {
     display: block;
-    
+    width: 60px;
+    height: 60px;
     color: white;
     border: none;
     padding: 0px;
     font-size: 16px;
     position: fixed;
     z-index: 20;
-    border-radius: 10px;
+    border-radius: 0%;
     /* Кнопка меню должна быть поверх остальных элементов */
   }
 
