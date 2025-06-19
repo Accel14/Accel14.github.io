@@ -12,6 +12,7 @@ function loadCart() {
   let totalCost = 0;
   let totalMass = 0;
   let totalCount = 0;
+  let totalVolume = 0;
 
   let cart = getCart();
   if (Object.keys(cart).length > 0) {
@@ -46,48 +47,16 @@ function loadCart() {
           if (cart[product.id]) {
             const totals = renderCartItem(product, count, categoryId);
             totalCost += totals.cost;
-            totalMass += totals.mass;
+            if (categoryId === 3) {totalVolume += totals.mass;} else {totalMass += totals.mass;}
             totalCount += totals.count;
           }
         })
         categoryId++;
       }
-      renderCartTotal(totalCost, totalMass, totalCount);
+      let grammAndMass = {totalMass, totalVolume};
+      renderCartTotal(totalCost, grammAndMass, totalCount);
 
     })
-
-
-
-
-
-
-
-  // fetch('js/products.json')
-  // .then(response => {
-  //   if (!response.ok) {
-  //     throw new Error('Файл не найден');
-  //   }
-  //   return response.json();
-  // })
-
-  // .then(res => {
-  //   return res[0][categoryId];
-  // })
-
-  // .then(products => {
-  //   products.forEach(product => {
-  //     const count = cart[product.id];
-  //     if (cart[product.id]) {
-  //       const totals = renderCartItem(product, count);
-  //       totalCost += totals.cost;
-  //       totalMass += totals.mass;
-  //       totalCount += totals.count;
-  //     }
-
-
-  //   })
-  //   renderCartTotal(totalCost, totalMass, totalCount);
-  // })
 
 
 }
@@ -101,16 +70,21 @@ function renderCartItem(product, count, categoryId) {
   el.classList.add('order');
   el.id = "order_" + product.id;
 
+  const grammOrMass = categoryId == 3 ? 'л.' : 'гр.' ;
   let mql = window.matchMedia("(max-width: 768px)");
   if (mql.matches) {
     el.innerHTML = `
-  <img src="food/${product.image_path}" class="food-image" alt="${product.name}">
+  <div class="order-img-container">
+    <img src="food/${product.image_path}" class="food-image" alt="${product.name}">
+  </div>
   <div class="product-details">
   
     <h3>${product.name}</h3>
 
     <div class="info-row">
-        <p>${product.mass} гр.</p>
+      <div style="min-width: 60px">
+        <p>${product.mass} ${grammOrMass}</p>
+      </div>
       <div class="count">
         <p id="count_${product.id}">${count} шт.</p>
         <img class="remove-icon" alt="Удалить" src="img/remove.png">
@@ -122,9 +96,11 @@ function renderCartItem(product, count, categoryId) {
   `;
   } else {
     el.innerHTML = `
-  <img src="food/${product.image_path}" class="food-image" alt="${product.name}">
+  <div class="order-img-container">
+    <img src="food/${product.image_path}" class="food-image" alt="${product.name}">
+  </div>
   <h3>${product.name}</h3>
-  <p>${product.mass} гр.</p>
+  <p>${product.mass} ${grammOrMass}</p>
   <div class="count">
     <p id="count_${product.id}">${count} шт.</p>
     <img class="remove-icon" alt="Удалить" src="img/remove.png">
@@ -146,7 +122,7 @@ function renderCartItem(product, count, categoryId) {
 
 
 
-function renderCartTotal(totalCost, totalMass, totalCount) {
+function renderCartTotal(totalCost, grammAndMass, totalCount) {
   const container = document.getElementById('order-list');
 
   const total = document.createElement('div');
@@ -154,6 +130,7 @@ function renderCartTotal(totalCost, totalMass, totalCount) {
   total.id = 'total-order';
   total.style.backgroundColor = 'rgb(41, 32, 18)';
   total.style.borderRadius = '10px';
+  let litres = grammAndMass.totalVolume > 0 ? ', ' + grammAndMass.totalVolume + " л." : '' ;
   let mql = window.matchMedia("(max-width: 768px)");
   if (mql.matches) {
     total.innerHTML = `
@@ -163,7 +140,7 @@ function renderCartTotal(totalCost, totalMass, totalCount) {
     <h3>Итого</h3>
 
     <div class="info-row">
-        <p>${totalMass} гр.</p>
+        <p>${grammAndMass.totalMass} гр. ${litres}</p>
       <div class="count">
         <p>${totalCount} шт.</p>
         <img class="remove-icon" alt="Удалить" src="img/remove.png">
@@ -177,11 +154,11 @@ function renderCartTotal(totalCost, totalMass, totalCount) {
     total.innerHTML = `
     <div></div>
     <h3 style="font-size: 24px;">Итого</h3>
-    <p  style="font-size: 20px;" id="total-mass">${totalMass} гр.</p>
+    <p  style="font-size: 18px;" id="total-mass">${grammAndMass.totalMass} гр. ${litres}</p>
     <div class="count">
       <p style="font-size: 24px;" id="total-products">${totalCount} шт.</p>
     </div>
-    <strong style="font-size: 24px;" id="total-price">${totalCost} руб.</strong>
+    <strong style="font-size: 22px;" id="total-price">${totalCost} руб.</strong>
   `;
   }
   

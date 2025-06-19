@@ -11,7 +11,7 @@ main {
 
 .order {
     display: grid;
-    grid-template-columns: 80px 1fr 100px 100px 120px;
+    grid-template-columns: 80px 1fr 120px 100px 120px;
     align-items: center;
     gap: 10px;
     padding: 10px 0;
@@ -22,9 +22,19 @@ main {
     border-bottom: none;
 }
 
+.order .order-img-container {
+    text-align: center;
+    align-items: center;
+    min-width: 60px;
+}
+
 .order .food-image {
-    max-width: 80px;
+    aspect-ratio: 100%;
+    max-height: 50px;
+    max-width: 100%;
+    width: auto;
     border-radius: 8px;
+
 }
 
 .order h3,
@@ -71,10 +81,17 @@ main {
         height: 60px;
         max-width: 100%;
     }
+
     .order .food-image {
+        aspect-ratio: 100%;
+        max-height: 50px;
         max-width: 60px;
+        width: auto;
+        border-radius: 8px;
     }
-    .order h3, .order p {
+
+    .order h3,
+    .order p {
         font-size: 15px;
     }
 
@@ -86,10 +103,10 @@ main {
     }
 
     .info-row {
-        display:flex;
+        display: flex;
         align-items: center;
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
 }

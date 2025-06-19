@@ -1,7 +1,9 @@
 
-function createProductCard(product, cart) {
+function createProductCard(product, cart, categoryId) {
+  console.log(categoryId);
   const el = document.createElement('div');
   el.classList.add('product-card');
+  const grammOrMass = categoryId == 3 ? 'л.' : 'гр.' ;
   
   el.innerHTML = `
     <div class="product-image-wrapper" style="background-image: url('img/paper.png')">
@@ -10,7 +12,7 @@ function createProductCard(product, cart) {
     <div class="product-info">
       <h3>${product.name}</h3>
       <div class="food-info">
-        <p>${product.mass} грамм</p>
+        <p>${product.mass} ${grammOrMass}</p>
         <strong>${product.price} руб.</strong>
       </div>
       <a href="#" class="button from-cart-btn" data-id="${product.id}">

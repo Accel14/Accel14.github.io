@@ -111,8 +111,7 @@ function loadProducts(categoryId, sortBy = 'name', _order = 'asc') {
   
       //const sortedByMassDesc = [...myProducts].sort((a, b) => parseFloat(b.mass) - parseFloat(a.mass));
       sorted.forEach(product => {
-
-        const el = createProductCard(product, cart);
+        const el = createProductCard(product, cart, categoryId);
         container.appendChild(el);
         if (!cart[product.id]) {
           document.getElementById
