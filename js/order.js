@@ -14,12 +14,17 @@ function loadCart() {
   let totalCount = 0;
   let totalVolume = 0;
 
+  const container = document.getElementById('order-list');
+  const orderButton = document.getElementById('order-button');
   let cart = getCart();
   if (Object.keys(cart).length > 0) {
     document.getElementById('empty-cart')?.remove();
+    container.style.display = 'grid';
+    orderButton.style.display = 'inline-block';
+
   }
 
-  const container = document.getElementById('order-list');
+  
   container.innerHTML = '';
 
   let categoryId = 1;
